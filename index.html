@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="employeeStyle.css" type="text/css">
+
+<body>
+    <header class="heading1">
+        <h1 class="heading1">Employee Management System</h1>
+    </header>
+    <div class="whole">
+        <div class="employeeForm">
+            <div class="employeeInput">
+                <form action="">
+                    <div class="input-field">
+                        Employee ID:
+                    </div>
+                    <div class="input-field">
+                        <input type="number" placeholder="Enter your employee ID" id="employee-id" required>
+                    </div>
+                    <div class="input-field">
+                        Name:
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter full name" id="name" required>
+                    </div>
+                    <div class="input-field">
+                        Age:
+                    </div>
+                    <div class="input-field">
+                        <input type="number" placeholder="Enter your age" id="age" required>
+                    </div>
+                    <div class="input-field">
+                        City:
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter city name" id="city" required>
+                    </div>
+                    <div class="input-field">
+                        Salary
+                    </div>
+                    <div class="input-field">
+                        <input type="number" placeholder="Enter your salary" id="salary" required>
+                    </div>
+                </form>
+            </div>
+            <div class="grid">
+                <div class="gridButtons">
+                    <button class="add" onclick="add()">
+                        Add
+                    </button>
+                    <button class="delete" onclick="del()">
+                        Delete
+                    </button>
+                    <button class="update" onclick="update()">
+                        Update
+                    </button>
+                    <button class="search" onclick="search()">
+                        Search
+                    </button>
+                    <button class="first" onclick="first()">
+                        First
+                    </button>
+                    <button class="previous" onclick="previous()">
+                        Previous
+                    </button>
+                    <button class="next" onclick="next()">
+                        Next
+                    </button>
+                    <button class="last" onclick="last()">
+                        Last
+                    </button>
+                    <button class="showAll" onclick="showAll()">
+                        Show All
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="employeeTable">
+            <table id="input-table">
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="foot-note">
+        <p style="font-weight: bold;">
+            This is a basic Employee Management Record
+        </p>
+        <p>
+            Add: Add elements (no field should be empty)
+        </p>
+        <p>
+            Delete: Delete elements (based on Employee ID or Name, filling any other field would give error)
+        </p>
+        <p>
+            Update: Update the values of table (based only on Employee ID, use must enter their Employee ID and then whichever other field has a value, that value will be updated otherwise remain unchanged)
+        </p>
+        <p>
+            Search: Search the values of table (based on Employee ID or Name, filling any other field would give error)
+        </p>
+        <p>
+            First / Last: Returns the value of the first / last field entered
+        </p>
+        <p>
+            Previous / Next: Returns the value of the previous / next to the field selected or currently being displayed
+        </p>
+        <p>
+            Show All: Displays the table
+        </p>
+        <footer>
+            Made By Anshuman Khanna
+        </footer>
+
+        <p class="print-things">
+        </p>
+    </div>
+    <script src="employeeScript.js"></script>
+</body>
+
+</html>
