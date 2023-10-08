@@ -75,7 +75,7 @@ function del() {
             // splice(start, number of elements to remove, elements to add = "")
             arrTable.splice(i, 1);
             arrValue.splice(i, 1);
-            changeIds(i, arrTable.length)
+            changeIds(i, arrTable.length);
 
             break;
         }
@@ -205,7 +205,11 @@ function changeIds(start, end) {
     let index = parseInt(start) + 1;
     while (index <= end) {
         console.log(`${"tableRow" + index}`, `${"tableRow" + (parseInt(index) - 1)}`);
-        document.getElementById(`${"tableRow" + index}`).id = `${"tableRow" + (parseInt(index) - 1)}`;
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById(`${"tableRow" + index}`).id = `${"tableRow" + (parseInt(index) - 1)}`;
+        });
+
         index ++;
     }
 }
