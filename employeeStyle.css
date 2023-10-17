@@ -29,7 +29,7 @@ body {
 .employeeTable {
     display: grid;
     width: 50%;
-    height: 100%;
+    height: auto;
     text-align: center;
 }
 
@@ -83,4 +83,17 @@ hr {
 .foot-note footer {
     justify-content: baseline;
     text-align: center;
+}
+
+/* adding responsiveness to the site */
+@media only screen and (max-width: 600px) {
+    .whole {
+        flex-direction: column;
+    }
+    .employeeForm, .employeeTable {
+        width: 100%;
+    }
+    .employeeTable {
+        margin-top: 10px;
+    }
 }
