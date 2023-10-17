@@ -9,6 +9,7 @@ var arrValue = [["Employee Id", "Name", "Age", "City", "Salary"]];
 var position = 0;
 var highlight = false;
 
+// adding some default values to always be displayed for testing purposes
 var arrEmployeeId = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010"];
 var arrNames = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 var arrAge = ["30", "30", "30", "30", "30", "30", "30", "30", "30", "30"];
@@ -150,8 +151,11 @@ function search() {
 function first() {
     if (highlight) unhighlight();
 
-    position = 1;
-    document.getElementById(`${"tableRow" + position}`).style.backgroundColor = "rgb(111,208,239)";
+    try {
+        position = 1;
+        document.getElementById(`${"tableRow" + position}`).style.backgroundColor = "rgb(111,208,239)";
+    }
+    catch (err) {console.log("Error was produced while trying to run function 'first()'");}
 
     fillInput(position);
     highlight = true;
@@ -186,7 +190,7 @@ function last() {
     fillInput(position);
     highlight = true;
 }
-function showAll(stringOut = arrTable.join("")) {   
+function showAll(stringOut = arrTable.join("")) {
     document.getElementById("input-table").innerHTML = stringOut;
     highlight = false;
 }
@@ -202,14 +206,7 @@ function fillInput(position) {
     document.getElementById("salary").value = arrValue[position][4];
 }
 function changeIds(start, end) {
-    let index = parseInt(start) + 1;
-    while (index <= end) {
-        console.log(`${"tableRow" + index}`, `${"tableRow" + (parseInt(index) - 1)}`);
-        
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById(`${"tableRow" + index}`).id = `${"tableRow" + (parseInt(index) - 1)}`;
-        });
-
-        index ++;
+    for (let index = parseInt(start) + 1; index <= end; index ++) {
+        arrTable[index - 1] = arrTable[index - 1].replace(`${"tableRow" + index}`, `${"tableRow" + (index - 1)}`);
     }
 }
