@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Employee Management System</title>
     <link rel="stylesheet" href="employeeStyle.css" type="text/css">
-
+    <link rel="shortcut icon" href="briefcase-solid.svg" type="image/x-icon">
 <body>
     <header class="heading1">
         <h1 class="heading1">Employee Management System</h1>
@@ -23,7 +22,7 @@
                         Name:
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter full name" id="name" required>
+                        <input type="text" placeholder="Enter full name" id="name" autocomplete="on" required>
                     </div>
                     <div class="input-field">
                         Age:
@@ -81,7 +80,7 @@
         </div>
     </div>
     <hr>
-    <div class="foot-note">
+    <div class="foot-note" id="footNote">
         <p style="font-weight: bold;">
             This is a basic Employee Management Record
         </p>
@@ -109,11 +108,7 @@
         <footer>
             Made By Anshuman Khanna
         </footer>
-
-        <p class="print-things">
-        </p>
     </div>
     <script src="employeeScript.js"></script>
 </body>
-
 </html>
